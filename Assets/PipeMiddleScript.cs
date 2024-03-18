@@ -22,7 +22,11 @@ public class PipeMiddleScript : MonoBehaviour
     //will urn when ever an onject hits the trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //now this is talking to the logic script
-        logic.addScore();
+        if (collision.gameObject.layer ==3)
+        {
+            //now this is talking to the logic script
+            logic.addScore(1);
+        }
+        
     }
 }
