@@ -26,8 +26,11 @@ public class BirdScript : MonoBehaviour
         {
             myRigidbody.velocity = Vector2.up * flapStrength;
         }
-        //bird falls off the screen
-        //if (transform.position.y > 17)
+        //bird falls off the screen, then trigger Game Over
+        if (transform.position.y < -30)
+        {
+            logic.gameOver();
+        }
     }
     //when that collison occurs trigger the Game Over Script
     private void OnCollisionEnter2D(Collision2D collision)
